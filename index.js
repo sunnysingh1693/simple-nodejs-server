@@ -3,6 +3,7 @@ const excelToJson = require("convert-excel-to-json");
 const fs = require("fs");
 const http = require("http");
 const dotenv = require("dotenv");
+const PORT = 8080;
 
 dotenv.config();
 
@@ -41,8 +42,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-console.log("process.env.ENV", process.env.ENV);
-
-const PORT = process.env.ENV == 'development' ? 5001 : 'https://clients-kdm.com/';
+// console.log("process.env.ENV", process.env.ENV);
 
 server.listen(PORT, () => console.log(`Server listening on ${PORT}`));
